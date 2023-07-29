@@ -1,0 +1,26 @@
+{
+  "name": "surfing-lamda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "engines": {
+    "node": "14.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deployfn": "sls deploy function -f headline",
+    "deploy": "sls deploy",
+    "offline": "sls offline"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chrome-aws-lambda": "^10.1.0",
+    "puppeteer-core": "^10.4.0",
+    "serverless": "^3.33.0"
+  },
+  "devDependencies": {
+    "serverless-offline": "^12.0.4"
+  }
+}
