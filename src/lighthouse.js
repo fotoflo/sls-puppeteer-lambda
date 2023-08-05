@@ -28,15 +28,11 @@ module.exports.get = async (event) => {
 
     const report = JSON.parse(result.report);
 
+    debugger;
+
     response = {
       statusCode: 200,
-      body: {
-        Perfomance: report["categories"]["performance"]["score"],
-        Accessibility: report["categories"]["accessibility"]["score"],
-        SEO: report["categories"]["seo"]["score"],
-        BestPractices: report["categories"]["best-practices"]["score"],
-        ErrorMessage: report["audits"]["speed-index"]["errorMessage"],
-      },
+      body: `Audited ${url} in ${result.lhr.timing.total} ms.`,
     };
   } catch (error) {
     console.error(error);
