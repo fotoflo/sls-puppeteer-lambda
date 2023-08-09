@@ -24,14 +24,6 @@ provider:
   runtime: nodejs14.x
 
 functions:
-  headline:
-    handler: src/headline.get
-    memorySize: 1600
-    timeout: 30
-    events:
-      - http:
-          path: headline/{outlet}
-          method: get
   ligthouse:
     handler: src/lighthouse.get
     memorySize: 1600

@@ -24,28 +24,24 @@ module.exports.get = async (event) => {
     const url = "https://www.google.com";
 
     const result = await lighthouse(url, options);
-    console.log(`Audited ${url} in ${result.lhr.timing.total} ms.`);
+    console.log(`Audited ${url} in ${result.lhr.timing.total} ms!`);
 
     const report = JSON.parse(result.report);
 
-    debugger;
-
-    response = {
+    return {
       statusCode: 200,
-      body: `Audited ${url} in ${result.lhr.timing.total} ms.`,
+      body: JSON.stringify(report),
     };
   } catch (error) {
     console.error(error);
 
-    response = {
+    return {
       statusCode: 500,
-      body: error,
+      body: "error",
     };
   } finally {
     if (browser !== null) {
       await browser.close();
     }
   }
-
-  return response;
 };

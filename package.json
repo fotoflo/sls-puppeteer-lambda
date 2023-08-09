@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "deployfn": "sls deploy function -f headline",
     "deploy": "sls deploy",
-    "offline": "sls offline"
+    "offline": "sls offline --reloadHandler"
   },
   "keywords": [],
   "author": "",
