@@ -2,8 +2,10 @@ const chromium = require("chrome-aws-lambda");
 const lighthouse = require("lighthouse/core/index.cjs");
 
 module.exports.get = async (event) => {
+  const { pageId } = event.pathParameters;
   let browser;
-  let response;
+
+  console.log({ pageId });
 
   try {
     browser = await chromium.puppeteer.launch({

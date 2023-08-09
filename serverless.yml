@@ -30,7 +30,7 @@ functions:
     timeout: 30
     events:
       - http:
-          path: lighthouse/{outlet}
+          path: lighthouse/{pageId}
           method: get
 # app and org for use with dashboard.serverless.com
 # You can pin your service to only deploy with a specific Serverless version
